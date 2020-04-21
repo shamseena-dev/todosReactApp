@@ -18,14 +18,23 @@ class App extends Component {
       todos
     })
   }
+  addTodo =(todo) =>{
+    
+    todo.id = (this.state.todos[this.state.todos.length-1].id )+ 1;
+    const todos = [...this.state.todos, todo]
+    this.setState({
+      todos 
+    })
+       
+  }
   render(){
     return (
-      <div className="center container center">
+      <div className="container center">
         <div className="card blue-grey">
         <h2 className="center white-text"> Todo-list Managing App</h2>
         <Todos todos={this.state.todos} deleteTodo={this.deleteTodo}/>
         </div>
-        <AddTodo />
+        <AddTodo addTodo={this.addTodo}/>
       </div>
     );
     }
