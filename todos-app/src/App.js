@@ -10,11 +10,14 @@ class App extends Component {
       {id: 4 , task : "Practise projects"}
     ]
   }
+  deleteTodo = (id) => {
+    console.log(id);
+  }
   render(){
     return (
-      <div className="container">
-        <h2 className="center blue-text"> Todo-list Managing App</h2>
-        <Todos todos={this.state.todos} />
+      <div className="center container blue-grey center">
+        <h2 className="center card-action"> Todo-list Managing App</h2>
+        <Todos todos={this.state.todos} deleteTodo={this.deleteTodo}/>
       </div>
     );
     }
