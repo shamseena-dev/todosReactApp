@@ -1,5 +1,6 @@
 import React, {Component } from 'react';
 import Todos from './Todos'
+import AddTodo from './AddTodo';
 
 class App extends Component {
   state = {
@@ -12,9 +13,9 @@ class App extends Component {
   }
   deleteTodo = (id) => {
     console.log(id);
-    const newlist = this.state.todos.filter(todo => {return todo.id!==id})
+    const todos = this.state.todos.filter(todo => {return todo.id!==id})
     this.setState({
-      todos : newlist
+      todos
     })
   }
   render(){
@@ -24,6 +25,7 @@ class App extends Component {
         <h2 className="center white-text"> Todo-list Managing App</h2>
         <Todos todos={this.state.todos} deleteTodo={this.deleteTodo}/>
         </div>
+        <AddTodo />
       </div>
     );
     }
