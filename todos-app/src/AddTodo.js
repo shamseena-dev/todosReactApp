@@ -19,11 +19,11 @@ class AddTodo extends Component{
     }
     render(){
     return (
-           <div className="card">
+           <div className="card blue-grey">
             <div className="card-content">
-                <h5 className="blue-text">Add New Todo Tasks:</h5>
+                <h5 className="white-text">Add New Todo Tasks:</h5>
                 <form onSubmit={this.handleSubmit}>                           
-                    <input type="text" placeholder="Add New Todo"  onChange={this.handleChange} value={this.state.task}></input>
+                    <input type="text" placeholder="Add New Todo here..."  onChange={this.handleChange} value={this.state.task}></input>
                     <button className="btn waves-effect waves-light" type="submit">Add Task</button>
                 </form>
                 </div>
